@@ -396,6 +396,18 @@ screenY:                2160
 supportedAbis[0]:       30:x86
 supportedVersionIds[0]: 30
 ---
+brand:                  google
+codename:               Pixel8
+form:                   PHYSICAL
+formFactor:             PHONE
+id:                     Pixel8
+manufacturer:           Google
+name:                   Pixel 8
+screenDensity:          428
+screenX:                1080
+screenY:                2400
+supportedVersionIds[0]: 35
+---
 brand:                  Android
 codename:               SmallPhone.arm
 form:                   VIRTUAL
