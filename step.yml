@@ -2,7 +2,7 @@ title: "Virtual Device Testing for Android"
 summary: Run Android UI tests on virtual devices
 description: |-
   Run Android UI tests on virtual devices. This Step collects the built APK/AAB file from the `$BITRISE_APK_PATH` and in case of instrumentation tests, the `$BITRISE_TEST_APK_PATH` Environment Variables and uses Firebase Test Lab to run UI tests on them.
-  
+
   The available test types are instrumentation, robo, gameloop. 
 
   ### Configuring the Step 
@@ -41,7 +41,7 @@ description: |-
   - [Deploy to Bitrise.io](https://www.bitrise.io/integrations/steps/deploy-to-bitrise-io)
 
 website: https://github.com/bitrise-steplib/steps-virtual-device-testing-for-android
-source_code_url: https://github.com/bitrise-steplib/steps-virtual-device-testing-for-android
+source_code_url: https://github.com/alexandresoler/steps-virtual-device-testing-for-android
 support_url: https://github.com/bitrise-steplib/steps-virtual-device-testing-for-android/issues
 project_type_tags:
   - android
@@ -54,9 +54,9 @@ type_tags:
 is_always_run: false
 is_skippable: false
 run_if: ".IsCI"
-meta: 
-  bitrise.io: 
-    addons_required: 
+meta:
+  bitrise.io:
+    addons_required:
       - addons-testing
 
 toolkit:
@@ -71,7 +71,7 @@ inputs:
       description: |
         The path to the app to test (APK or AAB). By default `android-build` and `android-build-for-ui-testing` Steps export the `BITRISE_APK_PATH` Env Var, so you won't need to change this input.
         Can specify an APK (`$BITRISE_APK_PATH`) or AAB (Android App Bundle) as input (`$BITRISE_AAB_PATH`).
-        
+
         If nothing is specified then the Step will use a default empty Application APK. This will help the library instrumentation tests as it can be used as a shell where the tests will be running.
   - test_devices: "NexusLowRes,24,en,portrait"
     opts:
@@ -79,12 +79,12 @@ inputs:
       description: |
         Format:
         One device configuration per line and the parameters are separated with `,` in the order of: `deviceID,version,language,orientation`
-        
+
         For example:
         `NexusLowRes,24,en,portrait`
-        
+
         `NexusLowRes,24,en,landscape`
-        
+
         Available devices and its versions:
         ```
         ┌─────────────────────┬──────────┬──────────────────────────────────────────┬─────────┬─────────────┬────────────────────────────┬─────────┐
@@ -110,12 +110,12 @@ inputs:
       summary: |
         Format:
         One device configuration per line and the parameters are separated with `,` in the order of: `deviceID,version,language,orientation`
-        
+
         For example:
         `NexusLowRes,24,en,portrait`
-        
+
         `NexusLowRes,24,en,landscape`
-        
+
         Available devices and its versions:
         ```
         ┌─────────────────────┬──────────┬──────────────────────────────────────────┬─────────┬─────────────┬────────────────────────────┬─────────┐
@@ -156,7 +156,7 @@ inputs:
       category: "Instrumentation Test"
       title: "Test APK path"
       summary: The path to the APK that contains instrumentation tests
-      description: The path to the APK that contains instrumentation tests. To build this, you can run the [Build for UI testing](https://bitrise.io/integrations/steps/android-build-for-ui-testing) Step (before this Step).  
+      description: The path to the APK that contains instrumentation tests. To build this, you can run the [Build for UI testing](https://bitrise.io/integrations/steps/android-build-for-ui-testing) Step (before this Step).
   - inst_test_runner_class:
     opts:
       category: "Instrumentation Test"
@@ -306,8 +306,8 @@ inputs:
         account before beginning the test.
       is_required: true
       value_options:
-      - "false"
-      - "true"
+        - "false"
+        - "true"
   - environment_variables:
     opts:
       category: "Test setup"
@@ -332,32 +332,32 @@ inputs:
       title: "Directories to pull"
       summary: |
         A list of paths that will be downloaded from the device's storage after the test is complete. 
-        
+
         For example
-        
+
         ```
         /sdcard/tempDir1
         /data/tempDir2
         ```
-        
+
         If `download_test_results` input is set to `false` then these files will be downloaded to the dashboard only. To have them downloaded set that input to `true` as well.
       description: |
         A list of paths that will be downloaded from the device's storage after the test is complete. 
-        
+
         For example
-        
+
         ```
         /sdcard/tempDir1
         /data/tempDir2
         ```
-        
+
         If `download_test_results` input is set to `false` then these files will be available on the dashboard only. To have them downloaded set that input to `true` as well.
   - download_test_results: "false"
     opts:
       category: "Debug"
       title: "Download files"
       summary: |
-        If this input is set to `true` all files generated in the test run and the files you downloaded from the device (if you have set `directories_to_pull` input as well) will be downloaded. Otherwise, no any file will be downloaded. 
+        If this input is set to `true` all files generated in the test run and the files you downloaded from the device (if you have set `directories_to_pull` input as well) will be downloaded. Otherwise, no any file will be downloaded.
       description: |
         If this input is set to `true` all files generated in the test run and the files you downloaded from the device (if you have set `directories_to_pull` input as well) will be downloaded. Otherwise, no any file will be downloaded.
       is_required: true
