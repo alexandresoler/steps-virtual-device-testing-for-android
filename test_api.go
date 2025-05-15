@@ -137,25 +137,25 @@ func uploadTestAssets(configs ConfigsModel) (TestAssetsAndroid, error) {
 	return testAssets, nil
 }
 
-func startTestRun(configs ConfigsModel, testAssets TestAssetsAndroid) error {
-	log.Debugf("C'est mon step!")
+func startTestRunNew(configs ConfigsModel, testAssets TestAssetsAndroid) error {
+	log.Infof("C'est mon step!")
 	return nil
 }
 
-func startTestRunOld(configs ConfigsModel, testAssets TestAssetsAndroid) error {
-	log.Debugf("C'est mon step!")
+func startTestRun(configs ConfigsModel, testAssets TestAssetsAndroid) error {
+	log.Infof("C'est mon step!")
 	url := configs.APIBaseURL + "/" + configs.AppSlug + "/" + configs.BuildSlug + "/" + configs.APIToken
-	log.Debugf("C'est mon step! 1")
+	log.Infof("C'est mon step! 1")
 
 	testModel := &testing.TestMatrix{}
-	log.Debugf("C'est mon step! 2")
+	log.Infof("C'est mon step! 2")
 	testModel.EnvironmentMatrix = &testing.EnvironmentMatrix{AndroidDeviceList: &testing.AndroidDeviceList{}}
-	log.Debugf("C'est mon step! 3")
+	log.Infof("C'est mon step! 3")
 
 	testModel.EnvironmentMatrix.AndroidDeviceList.AndroidDevices = configs.TestDevices
-	log.Debugf("C'est mon step! 4")
+	log.Infof("C'est mon step! 4")
 	testModel.FlakyTestAttempts = int64(configs.FlakyTestAttempts)
-	log.Debugf("C'est mon step! 5")
+	log.Infof("C'est mon step! 5")
 
 	// obb files to upload
 	var filesToPush []*testing.DeviceFile
