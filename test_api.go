@@ -139,6 +139,10 @@ func uploadTestAssets(configs ConfigsModel) (TestAssetsAndroid, error) {
 
 func startTestRun(configs ConfigsModel, testAssets TestAssetsAndroid) error {
 	log.Debugf("C'est mon step!")
+}
+
+func startTestRunOld(configs ConfigsModel, testAssets TestAssetsAndroid) error {
+	log.Debugf("C'est mon step!")
 	url := configs.APIBaseURL + "/" + configs.AppSlug + "/" + configs.BuildSlug + "/" + configs.APIToken
 	log.Debugf("C'est mon step! 1")
 
