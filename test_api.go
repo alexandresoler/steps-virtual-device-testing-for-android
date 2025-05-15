@@ -169,6 +169,7 @@ func startTestRun(configs ConfigsModel, testAssets TestAssetsAndroid) error {
 			},
 		})
 	}
+	log.Infof("C'est mon step! 6")
 
 	// a nil account does not log in to test Google account before test is started
 	var account *testing.Account
@@ -177,6 +178,7 @@ func startTestRun(configs ConfigsModel, testAssets TestAssetsAndroid) error {
 			GoogleAuto: &testing.GoogleAuto{},
 		}
 	}
+	log.Infof("C'est mon step! 7")
 
 	testModel.TestSpecification = &testing.TestSpecification{
 		TestTimeout: fmt.Sprintf("%fs", configs.TestTimeout),
@@ -187,6 +189,7 @@ func startTestRun(configs ConfigsModel, testAssets TestAssetsAndroid) error {
 			Account:              account,
 		},
 	}
+	log.Infof("C'est mon step! 8")
 
 	switch configs.TestType {
 	case testTypeInstrumentation:
