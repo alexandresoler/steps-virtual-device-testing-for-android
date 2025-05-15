@@ -55,7 +55,9 @@ func main() {
 
 	log.Infof("Uploading app and test files")
 
+	log.Infof("Coucou! 1")
 	testAssets, err := uploadTestAssets(configs)
+	log.Infof("Coucou! 2")
 	if err != nil {
 		failf("Failed to upload test assets, error: %s", err)
 	}
@@ -63,8 +65,10 @@ func main() {
 
 	fmt.Println()
 	log.Infof("Starting test")
+	log.Infof("Coucou! 3")
 
 	if err = startTestRun(configs, testAssets); err != nil {
+		log.Infof("Coucou! 4")
 		failf("Starting test run failed, error: %s", err)
 	}
 	log.Donef("=> Test started")
