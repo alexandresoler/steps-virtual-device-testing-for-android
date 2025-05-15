@@ -51,6 +51,8 @@ func main() {
 	fmt.Println()
 	successful := true
 
+	log.Infof("Coucou!")
+
 	log.Infof("Uploading app and test files")
 
 	testAssets, err := uploadTestAssets(configs)
