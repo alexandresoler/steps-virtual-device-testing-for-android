@@ -139,6 +139,7 @@ func uploadTestAssets(configs ConfigsModel) (TestAssetsAndroid, error) {
 
 func startTestRun(configs ConfigsModel, testAssets TestAssetsAndroid) error {
 	log.Debugf("C'est mon step!")
+	return nil
 }
 
 func startTestRunOld(configs ConfigsModel, testAssets TestAssetsAndroid) error {
