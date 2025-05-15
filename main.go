@@ -69,7 +69,7 @@ func main() {
 
 	if err = startTestRun(configs, testAssets); err != nil {
 		log.Infof("Coucou! 4")
-		// failf("Starting test run failed, error: %s", err)
+		failf("Starting test run failed, error: %s", err)
 	}
 	log.Infof("Coucou! 5")
 	log.Donef("=> Test started")

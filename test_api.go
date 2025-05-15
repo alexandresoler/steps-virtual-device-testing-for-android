@@ -185,6 +185,7 @@ func startTestRun(configs ConfigsModel, testAssets TestAssetsAndroid) error {
 
 	switch configs.TestType {
 	case testTypeInstrumentation:
+		log.Debugf("testTypeInstrumentation!")
 		testModel.TestSpecification.AndroidInstrumentationTest = &testing.AndroidInstrumentationTest{}
 
 		if testAssets.isBundle {
